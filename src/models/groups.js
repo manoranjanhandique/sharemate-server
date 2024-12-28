@@ -5,7 +5,7 @@ const groupSchema=new mongoose.Schema({
         type:String,
         require:true
     },
-    group_details:{
+    group_detail:{
         type:String,
         require:true
     },
@@ -19,7 +19,15 @@ const groupSchema=new mongoose.Schema({
             type:Number,
             default:0,
         }
-    }]
+    }],
+    status: {
+        type: String,
+        enum: {
+            values:["active", "closed"],
+            message: `{VALUE} is not a valid status type`,
+        },
+        default:"active",
+    }
 },{
     timestamps:true,
 })
