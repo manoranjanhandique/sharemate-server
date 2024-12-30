@@ -19,13 +19,13 @@ const groupValidationSchema = joi.object({
   }),
   member_email: joi
     .string()
+    .optional()
+    .allow('')
     .trim()
     .email()
     .lowercase()
     .pattern(new RegExp("^[^s@]+@[^s@]+.[^s@]+$"))
-    .required()
     .messages({
-      "string.empty": "Email is required",
       "string.email": "Please provide a valid email address",
       "string.pattern.base": "Please provide a valid email address",
     }),

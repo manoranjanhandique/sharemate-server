@@ -4,6 +4,7 @@ const {
 } = require("../validations/uservalidation");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users");
+
 const userSignUp = async (req, res) => {
   // console.log(req.body);
   /**Need to work on standard error formate */
